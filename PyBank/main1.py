@@ -17,8 +17,10 @@ greatest_decrease_month = 0
 # Read csvfile
 with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    header = next(csvreader)
+    header = next(csvreader, none)
 
     # For loop to read each row after header
     for row in csvreader:
         total_months +=1
+        net_profit += int(row[1])
+
