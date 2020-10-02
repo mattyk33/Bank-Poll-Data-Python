@@ -8,7 +8,7 @@ csvpath = os.path.join('Resources', 'budget_data.csv')
 total_months = 0
 net_profit = 0 
 current_month_profit = 0
-previous_month_profit = 0
+previous_month_profit = 867884
 profit_change = 0
 profit_changes = []
 months = []
@@ -34,8 +34,8 @@ sum_profit_changes = sum(profit_changes)
 average_change = sum_profit_changes / (total_months-1)
 max_change = max(profit_changes)
 min_change = min(profit_changes)
-max_month = months[profit_changes.index(max_change)]
-min_month = months[profit_changes.index(min_change)]
+max_month = months[profit_changes.index(max_change) + 1]
+min_month = months[profit_changes.index(min_change) + 1]
 
 #print summary
 print("Financial Analysis")
