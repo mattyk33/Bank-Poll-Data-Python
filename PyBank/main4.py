@@ -48,7 +48,7 @@ print(f"Greatest Decrease in Profits: {min_month} (${min_change})")
 
 # Output summary to txt
 save_file = csvpath.strip(".csv") + "_results.txt"
-csvpath = os.path.join(save_file)
+csvpath = os.path.join("Analysis", save_file)
 with open(csvpath,'w') as text:
     text.write("Financial Analysis" + "\n")
     text.write("----------------------------------------" + "\n")
