@@ -31,7 +31,7 @@ with open(csvpath, newline='') as csvfile:
 
 # month by month results
 sum_profit_changes = sum(profit_changes)
-average_change = sum_profit_changes / (total_months-1)
+average_change = round(sum_profit_changes / (total_months-1), 2)
 max_change = max(profit_changes)
 min_change = min(profit_changes)
 max_month = months[profit_changes.index(max_change) + 1]

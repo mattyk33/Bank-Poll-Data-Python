@@ -22,7 +22,6 @@ with open(csvpath, newline='') as csvfile:
     for row in csvreader:
         total_votes += 1
         i = (row[2])
-        #candidates.append(row[2])
 
         # Conditional to count votes
         if i in candidate_votes:
@@ -30,27 +29,19 @@ with open(csvpath, newline='') as csvfile:
         else:
             candidate_votes[i] = 1
 
-        # For loop to calculate candidate percentages
-        #for key in candidate_votes.items():
-            #votes = candidate_votes.get(key)
-            #percent = (round((votes/ total_votes), 3)) * 100
-            #candidate_percentages[key] = percent
-
-            #if votes > winner_votes:
-               # winner_votes = votes
-                #winner = key
-
-#print summary
+# print summary
 print("Election Results")
 print("-----------------------------")
 print(f"Total Votes: {total_votes}")
 print("-----------------------------")
+# For loop to calculate candidate percentages
 for key, votes in candidate_votes.items():
-    percent = (votes/total_votes)*100
+    percent = round(((votes/total_votes)*100), 3)
     print(f"{key}: {percent}% ({votes})")
-    print("-----------------------------")
+    # Conditonal to find winner
     if votes > winner_votes:
                 winner_votes = votes
                 winner = key
+print("-----------------------------")
 print(f"Winner: {winner}")
 print("-----------------------------")
